@@ -11,3 +11,10 @@ Package.onUse(function(api) {
   if (api.export)
     api.export('Errors');
 });
+
+Package.onTest(function(api) {
+  api.use('mtchllbrrn:errors', 'client');
+  api.use(['tinytest', 'test-helpers'], 'client');
+
+  api.addFiles('errors_tests.js', 'client');
+});
